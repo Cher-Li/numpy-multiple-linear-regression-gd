@@ -61,8 +61,11 @@ def compute_feature_stats(X):
     # returns mean and std
     return (col_means, col_std)
 
-# Step 4 - standardize_features (not yet solved)
-# TODO: implement
+# Step 4 - standardize_features
+def standardize_features(X, mean, std):
+    # TODO: Apply z-score normalization using precomputed training mean and std.
+    Z_score_norm = (X - mean) / std 
+    return Z_score_norm
 
 # Step 5 - add_bias_column (not yet solved)
 # TODO: implement
