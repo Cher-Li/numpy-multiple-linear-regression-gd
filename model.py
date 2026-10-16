@@ -67,8 +67,15 @@ def standardize_features(X, mean, std):
     Z_score_norm = (X - mean) / std 
     return Z_score_norm
 
-# Step 5 - add_bias_column (not yet solved)
-# TODO: implement
+# Step 5 - add_bias_column
+import numpy as np
+
+def add_bias_column(X):
+    # TODO: Prepend a column of ones to feature matrix X
+    n = X.shape[0]
+    bias_col = np.ones((n, 1))
+    X = np.hstack([bias_col, X])
+    return X
 
 # Step 6 - prepare_design_matrix (not yet solved)
 # TODO: implement
