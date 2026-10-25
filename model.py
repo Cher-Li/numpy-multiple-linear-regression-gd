@@ -185,8 +185,24 @@ def update_early_stop_state(val_loss, best_val_loss, wait, weights, best_weights
     
     return (best_val_loss, wait, best_weights, stop)
 
-# Step 15 - init_training_state (not yet solved)
-# TODO: implement
+# Step 15 - init_training_state
+def init_training_state(n_features, seed=None):
+    # TODO: Build the initial training-state dictionary for the GD epoch loop.
+    weights = initialize_weights(n_features, seed=seed)
+    # starting weight vec
+
+    # build the dict
+    state = {
+        "weights": weights, # put vector under weights
+        "best_weights": weights.copy(), # ind copy
+        "best_val_loss": np.inf, # init best val loss
+        "wait": 0, 
+        "train_losses": [],
+        "val_losses": [],
+        "stopped": False 
+    }
+    
+    return state
 
 # Step 16 - run_one_epoch (not yet solved)
 # TODO: implement
